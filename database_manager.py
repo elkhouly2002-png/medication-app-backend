@@ -320,7 +320,7 @@ class DatabaseManager:
         cursor.execute('''
             SELECT * FROM dose_logs 
             WHERE user_name = ? 
-            AND scheduled_time >= date('now', '-' || ? || ' days')
+            AND scheduled_time >= datetime('now', '-' || ? || ' days')
             ORDER BY scheduled_time DESC
         ''', (user_name, days))
 
