@@ -2,7 +2,7 @@
 triage_engine.py
 Symptom Triage System for DoseMate
 Classifies user-reported symptoms into 4 levels:
-- EMERGENCY: Call 911 / go to ER immediately
+- EMERGENCY: Call 123 (Egyptian Ambulance) / go to ER immediately
 - URGENT: Go to urgent care today
 - APPOINTMENT: Book a clinic appointment this week
 - SELF_CARE: Rest and monitor at home
@@ -32,7 +32,7 @@ class TriageEngine:
         'bleeding heavily', 'heavy bleeding', "won't stop bleeding", 'blood everywhere',
         'coughing blood', 'vomiting blood',
         # Other
-        'very high fever', 'fever above 40', 'fever 40', 'high fever',
+        'very high fever', 'fever above 40', 'fever 40',
         'not waking up', "won't wake up", 'blue lips', 'blue skin',
     ]
 
@@ -40,7 +40,7 @@ class TriageEngine:
         # Fever
         'high fever', 'fever 39', 'fever above 39', 'very hot', 'burning up',
         # Head / Pain
-        'severe headache', 'bad headache', 'migraine', 'severe pain', 'unbearable pain',
+        'bad headache', 'migraine', 'severe pain', 'unbearable pain',
         'intense pain',
         # Infection signs
         'spreading rash', 'red streaks', 'wound infected', 'swollen and red',
@@ -102,10 +102,10 @@ class TriageEngine:
             'level': 'EMERGENCY',
             'emoji': '🚨',
             'title': 'Emergency - Act Now',
-            'action': 'Call 911 or go to the nearest Emergency Room immediately.',
+            'action': 'Call 123 (Egyptian Ambulance) or go to the nearest Emergency Room immediately.',
             'color': '#FF3B30',
             'advice': (
-                'Do not wait. Call emergency services (911) right now or have someone '
+                'Do not wait. Call emergency services (123) right now or have someone '
                 'take you to the ER immediately. Do not drive yourself.'
             ),
             'disclaimer': (
