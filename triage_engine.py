@@ -17,6 +17,8 @@ class TriageEngine:
         'chest painn', 'chest pan', 'chest pian', 'cheast pain', 'chestpain',
         'chest is hurting', 'chest hurts', 'chest hurtting', 'chest hurst',
         'my chest hurts', 'my chset hurts', 'my cheast hurts', 'my chesst hurts',
+        'my cheast is hurting', 'my chest is hurting', 'my cheast is hurtng',
+        'cheast is hurting', 'cheast hurts', 'cheast is hurtng',
         'chest tightness', 'chest pressure', 'chest discomfort',
         'heart attack', 'hart attack', 'heart atack', 'heart attck', 'heart attak',
         'hart atack', 'having a heart attack', 'having hart attack',
@@ -26,6 +28,7 @@ class TriageEngine:
         "can't breathe", 'cant breathe', 'cant breath', 'cant breth', 'cant breaht',
         'cannot breathe', 'cannot breath', 'can not breathe', 'i cant breathe',
         'i cant breath', 'i cant breth', 'i cant breaht', 'i cant brethe',
+        'cant breathe at all', 'i cant breathe at all', 'i cant breath at all',
         'difficulty breathing', 'difficulti breathing', 'dificulty breathing',
         'trouble breathing', 'truoble breathing', 'trobule breathing',
         'shortness of breath', 'short of breath', 'not breathing',
@@ -33,11 +36,15 @@ class TriageEngine:
         # Neurological - correct + typos
         'stroke', 'strok', 'i think i had stroke', 'i think i had strok',
         'facial droop', 'face drooping', 'face droping', 'face is drooping',
-        'my face droped', 'arm weakness', 'slurred speech', 'slured speech',
+        'my face droped', 'my face is dropping', 'my face is droping',
+        'my fase is droping', 'my fase is dropping', 'fase is droping',
+        'face dropping', 'face dropped',
+        'arm weakness', 'slurred speech', 'slured speech',
         'slurrd speech', 'slurred speach', 'slured speach',
         'sudden confusion', 'suddden confusion', 'suddn confusion',
         'seizure', 'siezure', 'seisure', 'seazure', 'seizuer',
-        'i had seizure', 'i had siezure', 'i had seisure',
+        'i had seizure', 'i had siezure', 'i had seisure', 'i had a seisure',
+        'i had a seizure',
         'unconscious', 'unconcius', 'unconshus', 'unconcious',
         'passed out', 'passd out', 'past out',
         'lost consciousness', 'lost conciousness', 'lost consciousnes',
@@ -46,7 +53,8 @@ class TriageEngine:
         'anaphylaxis', 'anaphlaxis', 'anaphylaxs', 'anaphalaxis',
         'allergic reaction', 'alergic reaction', 'allergic reacton',
         'severe allergic reaction', 'severe alergic reaction',
-        'throat closing', 'throut closing', 'throat closng',
+        'throat closing', 'throut closing', 'throat closng', 'my throat is closing',
+        'my throut is closing', 'my throat is closng', 'my throut is closng',
         'throat swelling', 'throatt swelling', 'throut sweling',
         'tongue swelling', 'tounge swelling', 'tong swelling',
         'lips swelling', 'lips sweling', 'lip swelling',
@@ -62,7 +70,9 @@ class TriageEngine:
         'i think i am poisoned', 'i think i got poisoned',
         # Bleeding - correct + typos
         'bleeding heavily', 'bleding heavily', 'heavvy bleeding', 'haevy bleeding',
-        'heavy bleeding', 'bleding hevily',
+        'heavy bleeding', 'bleding hevily', 'bleding heavly', 'i am bleding heavily',
+        'i am bleeding heavily', 'i am bleding heavly', 'am bleding heavly',
+        'am bleeding heavily', 'bleeding heavly', 'bleding heavi',
         "won't stop bleeding", 'wont stop bleeding', 'wont stop bleding',
         'blood everywhere', 'coughing blood', 'coughing blod', 'coughing up blood',
         'vomiting blood', 'vomting blood', 'vommiting blood',
@@ -81,7 +91,8 @@ class TriageEngine:
         # Head / Pain
         'bad headache', 'migraine', 'severe pain', 'unbearable pain', 'intense pain',
         # Infection signs
-        'spreading rash', 'red streaks', 'wound infected', 'swollen and red',
+        'spreading rash', 'red streaks', 'wound infected', 'my wound is infected',
+        'wound is infected', 'infected wound', 'swollen and red',
         'pus', 'abscess',
         # Medication reaction
         'bad reaction', 'reaction to medication', 'medicine reaction',
@@ -159,7 +170,7 @@ class TriageEngine:
             'color': '#FF9500',
             'advice': (
                 'Your symptoms need medical attention today. If you cannot reach a '
-                'doctor or urgent care, and your symptoms worsen, go to the ER.'
+                'doctor or urgent care, and your symptoms worsen, call 123 or go to the ER.'
             ),
             'disclaimer': (
                 'This is not a diagnosis. Please consult a healthcare professional.'
@@ -176,7 +187,7 @@ class TriageEngine:
                 'by a doctor soon. Book an appointment within the next few days.'
             ),
             'disclaimer': (
-                'This is not a diagnosis. If symptoms worsen, seek care sooner.'
+                'This is not a diagnosis. If symptoms worsen, call 123 or seek care sooner.'
             )
         },
         'SELF_CARE': {
@@ -188,7 +199,7 @@ class TriageEngine:
             'advice': (
                 'Your symptoms appear mild. Rest well, drink plenty of fluids, and '
                 'monitor how you feel. If symptoms persist beyond 3 days or worsen, '
-                'contact a doctor.'
+                'contact a doctor or call 123.'
             ),
             'disclaimer': (
                 'This is not a diagnosis. Always consult a professional if you are unsure.'

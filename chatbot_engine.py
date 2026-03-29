@@ -563,7 +563,7 @@ class ChatbotEngine:
         elif intent == 'symptom_report':
             return "I've noted your symptoms. Please describe them in more detail so I can help guide you."
         elif intent == 'emergency_symptom':
-            return "🚨 This sounds serious. Please call emergency services (911) or go to the nearest ER immediately. Do not wait."
+            return "🚨 This sounds serious. Please call emergency services (123) or go to the nearest ER immediately. Do not wait."
         else:
             return self._response_general()
 
