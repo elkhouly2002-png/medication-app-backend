@@ -105,6 +105,7 @@ class TriageEngine:
         'side effects bad', 'severe side effects', 'new rash after medication', 'hives',
         # Digestive
         'vomiting repeatedly', "can't keep anything down", 'severe vomiting',
+        'severe nausea', 'i have severe nausea',
         'severe diarrhea', 'blood in stool', 'black stool',
         # Mental
         'thoughts of self harm', 'want to hurt myself', 'suicidal',
@@ -129,7 +130,7 @@ class TriageEngine:
         'need a refill', 'prescription refill', 'need a prescription refill',
         'prescription expired', 'side effects',
         # Digestive
-        'stomach ache', 'severe nausea', 'constipation', 'bloating',
+        'stomach ache', 'constipation', 'bloating',
         # Other
         'fatigue', 'tired all the time', 'sleeping too much', 'weight loss',
         'weight gain', 'feeling off', 'not feeling well',
@@ -145,7 +146,8 @@ class TriageEngine:
         # Tiredness
         'a bit tired', 'slightly tired', 'mild fatigue',
         # Digestive
-        'mild nausea', 'i have mild nausea', 'slightly nauseous', 'upset stomach',
+        'mild nausea', 'i have mild nausea', 'nausea', 'i have nausea',
+        'nauseous', 'i feel nauseous', 'slightly nauseous', 'upset stomach',
         'indigestion', 'mild stomach pain',
         # Minor skin
         'minor cut', 'small cut', 'scratch', 'bruise', 'minor bruise',
