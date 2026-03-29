@@ -1,6 +1,7 @@
 # chatbot_engine.py
 # This class handles conversation flow and user intent detection using ML
 # Includes conversation state management for multi-turn dialogues
+# Updated: Added symptom_report and emergency_symptom intent handling
 
 from datetime import datetime, timedelta
 import pickle
@@ -558,6 +559,11 @@ class ChatbotEngine:
             return self._response_next_dose(context_info)
         elif intent == 'set_reminder_preference':
             return self._response_set_reminder(user_message)
+        # NEW: Triage intents (fallback if triage_engine didn't catch it first)
+        elif intent == 'symptom_report':
+            return "I've noted your symptoms. Please describe them in more detail so I can help guide you."
+        elif intent == 'emergency_symptom':
+            return "🚨 This sounds serious. Please call emergency services (911) or go to the nearest ER immediately. Do not wait."
         else:
             return self._response_general()
 

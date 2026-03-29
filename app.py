@@ -1,6 +1,7 @@
 """
 Flask API for Medication Reminder Chatbot
 COMPLETE replica of main.py with handle_dose_confirmation and database deletes
+Updated: Added Symptom Triage System
 """
 
 from flask import Flask, request, jsonify
@@ -16,6 +17,7 @@ from context_manager import ContextManager
 from medication import Medication
 from dose_log import DoseLog
 from user import User
+from triage_engine import TriageEngine  # NEW
 
 app = Flask(__name__)
 CORS(app)
@@ -24,6 +26,7 @@ db = DatabaseManager()
 adherence_analyzer = AdherenceAnalyzer(db)
 context_manager = ContextManager()
 chatbot_engine = ChatbotEngine(context_manager)
+triage_engine = TriageEngine()  # NEW
 
 user_sessions = {}
 
@@ -470,6 +473,20 @@ class ChatbotSession:
 
         self.last_user_message = user_message.lower()
 
+        # ── NEW: Run triage check BEFORE intent classification ──
+        # Only run triage if not already in a medication conversation
+        if not self.chatbot_engine.is_in_conversation():
+            triage_result = triage_engine.assess(user_message)
+            if triage_result:
+                chat_response = triage_engine.format_chat_response(triage_result)
+                return {
+                    'success': True,
+                    'message': chat_response,
+                    'in_conversation': False,
+                    'triage': triage_result  # Send triage data to frontend
+                }
+        # ── END triage check ──
+
         if self.chatbot_engine.is_in_conversation():
             followup_result = self.chatbot_engine.process_followup_response(user_message)
 
@@ -538,7 +555,33 @@ def chat():
     session = user_sessions[user_name]
     result = session.process_message(message)
 
-    return jsonify({'success': result['success'], 'message': result['message'], 'in_conversation': result.get('in_conversation', False)})
+    return jsonify({
+        'success': result['success'],
+        'message': result['message'],
+        'in_conversation': result.get('in_conversation', False),
+        'triage': result.get('triage', None)  # NEW: pass triage data to frontend
+    })
+
+
+# NEW: Standalone triage endpoint
+@app.route('/api/triage', methods=['POST'])
+def triage():
+    try:
+        data = request.json
+        message = data.get('message', '')
+
+        if not message:
+            return jsonify({'success': False, 'error': 'message is required'}), 400
+
+        result = triage_engine.assess(message)
+
+        if result:
+            return jsonify({'success': True, 'triage': result})
+        else:
+            return jsonify({'success': True, 'triage': None, 'message': 'No symptoms detected'})
+
+    except Exception as e:
+        return jsonify({'success': False, 'error': str(e)}), 500
 
 
 @app.route('/api/medications', methods=['GET'])
@@ -696,4 +739,5 @@ def health_check():
 if __name__ == '__main__':
     print("🚀 Starting Medication Reminder API...")
     print("📱 WITH proper database deletes for medications")
+    print("🩺 Symptom Triage System loaded")
     app.run(debug=True, host='0.0.0.0', port=5000, threaded=True)

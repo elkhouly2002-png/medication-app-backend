@@ -1,0 +1,1181 @@
+text,intent
+I took my medication,confirm_dose
+Just took my meds,confirm_dose
+I've taken the pill,confirm_dose
+Done with my dose,confirm_dose
+I had my tablets,confirm_dose
+Just had my pills,confirm_dose
+I already took it,confirm_dose
+Finished my medication,confirm_dose
+I have taken my medication,confirm_dose
+Dose taken,confirm_dose
+I swallowed the pill,confirm_dose
+Took my morning meds,confirm_dose
+Took my evening medication,confirm_dose
+I've had today's dose,confirm_dose
+Yep I took it,confirm_dose
+Yes I did take it,confirm_dose
+Medication taken,confirm_dose
+I just took the medicne,confirm_dose
+took my med,confirm_dose
+just took it now,confirm_dose
+I already had my dose today,confirm_dose
+All done with my meds,confirm_dose
+Finished taking it,confirm_dose
+I've completed the dose,confirm_dose
+I took the tablet,confirm_dose
+I've taken it already,confirm_dose
+I just finished my pills,confirm_dose
+Had my medicine,confirm_dose
+Took it a minute ago,confirm_dose
+I did take my meds,confirm_dose
+Yes,confirm_dose
+I confirm I took it,confirm_dose
+I've consumed my medication,confirm_dose
+Took my meds earlier,confirm_dose
+Already done,confirm_dose
+I took today's pill,confirm_dose
+My meds are taken,confirm_dose
+Just completed my medication,confirm_dose
+I have already taken the prescribed dose,confirm_dose
+Yep swallowed it,confirm_dose
+I took it late but I took it,confirm_dose
+Just had it,confirm_dose
+I took my medcation,confirm_dose
+I've taken the scheduled dose,confirm_dose
+Completed my morning pill,confirm_dose
+Took the capsule,confirm_dose
+Yes I took my medication,confirm_dose
+I finished the dose now,confirm_dose
+Had it already,confirm_dose
+Just took my prescribed meds,confirm_dose
+Yep just took it now thanks,confirm_dose
+Took the meds a few mins ago,confirm_dose
+Already had today's tablet,confirm_dose
+I've just taken my scheduled medication,confirm_dose
+Done taking my prescription,confirm_dose
+I took it earlier this morning,confirm_dose
+Yes I've taken my dose already,confirm_dose
+Swallowed my capsule,confirm_dose
+Medication completed for today,confirm_dose
+Taken,confirm_dose
+Finished it,confirm_dose
+All set,confirm_dose
+Just took my pill now,confirm_dose
+I took my meds late but done,confirm_dose
+Took it just now,confirm_dose
+Already consumed the medication,confirm_dose
+My dose is done,confirm_dose
+I had it 5 minutes ago,confirm_dose
+Yes took my medicne,confirm_dose
+I confirm the dose is taken,confirm_dose
+yeah I just had it,confirm_dose
+took em already,confirm_dose
+yep swallowed it,confirm_dose
+just finished my meds,confirm_dose
+yeah done with that pill,confirm_dose
+just had my dose now,confirm_dose
+already took that one,confirm_dose
+yeah I already took it,confirm_dose
+yep had my pill,confirm_dose
+just took my meds,confirm_dose
+I finished my tablet,confirm_dose
+dose is done,confirm_dose
+took that one already,confirm_dose
+yes I've taken it,confirm_dose
+pills taken,confirm_dose
+all good I took it earlier,confirm_dose
+medication done,confirm_dose
+Remind me later,snooze_reminder
+Snooze this reminder,snooze_reminder
+Remind me in 10 minutes,snooze_reminder
+Can you remind me later?,snooze_reminder
+Delay this please,snooze_reminder
+Push it back 30 mins,snooze_reminder
+Not now,snooze_reminder
+Snooze for 1 hour,snooze_reminder
+Remnd me later,snooze_reminder
+Remind me in an hour,snooze_reminder
+Postpone this reminder,snooze_reminder
+Can I take it later?,snooze_reminder
+Give me 15 mins,snooze_reminder
+Delay my meds reminder,snooze_reminder
+Remind me tonight instead,snooze_reminder
+Snooze it please,snooze_reminder
+Move it to later,snooze_reminder
+Wait 20 minutes,snooze_reminder
+I'll take it later,snooze_reminder
+Can you remind me in 2 hours?,snooze_reminder
+Not right now,snooze_reminder
+Remind me after lunch,snooze_reminder
+Later please,snooze_reminder
+Snooze 5 minutes,snooze_reminder
+Remind me at 6 instead,snooze_reminder
+Push reminder to tomorrow morning,snooze_reminder
+Delay it a bit,snooze_reminder
+Remind me this evening,snooze_reminder
+Postpone for now,snooze_reminder
+Can I snooze it?,snooze_reminder
+Give me half an hour,snooze_reminder
+Remind me after work,snooze_reminder
+Not ready yet,snooze_reminder
+Snooze med reminder,snooze_reminder
+Remind me later today,snooze_reminder
+Push it 1 hr,snooze_reminder
+Remind me again soon,snooze_reminder
+Delay dose reminder,snooze_reminder
+Remind me at 8pm,snooze_reminder
+Snooze reminder plz,snooze_reminder
+Can you remind me in 45 minutes?,snooze_reminder
+Delay by 10 mins,snooze_reminder
+Snooze it 30min,snooze_reminder
+Remind me after dinner,snooze_reminder
+Not now maybe later,snooze_reminder
+Push this reminder back,snooze_reminder
+Remind me tomorrow instead,snooze_reminder
+Give me some time,snooze_reminder
+Later pls,snooze_reminder
+Remind me again in 5,snooze_reminder
+Hold this reminder,snooze_reminder
+Delay the notification,snooze_reminder
+Not yet remind me soon,snooze_reminder
+Postpone by an hour,snooze_reminder
+Snooz it,snooze_reminder
+Skip this dose,skip_dose
+I'm skipping it today,skip_dose
+Don't take this one,skip_dose
+Cancel this dose,skip_dose
+I want to skip today's pill,skip_dose
+Not taking it,skip_dose
+Skip for today,skip_dose
+I won't take this dose,skip_dose
+Cancel medication today,skip_dose
+Skipping my meds,skip_dose
+I'll miss this one,skip_dose
+Don't remind me,skip_dose
+Remove this dose,skip_dose
+I am not taking it today,skip_dose
+Skip dose please,skip_dose
+Not gonna take it,skip_dose
+Skip my medicne,skip_dose
+I refuse this dose,skip_dose
+Cancel today's medication,skip_dose
+I'll skip it,skip_dose
+Mark as skipped,skip_dose
+I don't want this dose,skip_dose
+Skip just this once,skip_dose
+No dose today,skip_dose
+I am skipping the scheduled dose,skip_dose
+Cancel pill,skip_dose
+Ignore this dose,skip_dose
+Don't take it today,skip_dose
+I missed it,skip_dose
+Skip this medication reminder,skip_dose
+Skip it today,skip_dose
+I'm not taking this pill,skip_dose
+Cancel this medication for today,skip_dose
+I'll skip today's dose,skip_dose
+Not needed today,skip_dose
+Remove today's pill,skip_dose
+I don't want to take it,skip_dose
+Mark today as skipped,skip_dose
+I'll miss this dose,skip_dose
+Skip this one only,skip_dose
+nah skipping this one,skip_dose
+not taking it today,skip_dose
+skip this dose please,skip_dose
+nah I'm skipping that,skip_dose
+not taking this dose,skip_dose
+skip today's pill,skip_dose
+I won't take it today,skip_dose
+don't log this dose,skip_dose
+When did I last take it?,query_history
+Did I take my meds today?,query_history
+Show my dose history,query_history
+When was my last pill?,query_history
+Have I taken today's dose?,query_history
+Check my medication log,query_history
+Did I already take it?,query_history
+When did I last have my medicine?,query_history
+Show past doses,query_history
+Did I miss yesterday?,query_history
+History of my meds,query_history
+When was the previous dose?,query_history
+Have I taken it this morning?,query_history
+Show my recent doses,query_history
+When did I last confirm?,query_history
+Did I take my medicne?,query_history
+Medication history please,query_history
+Did I skip any dose?,query_history
+What time did I take it?,query_history
+Show me yesterday's record,query_history
+When was it last logged?,query_history
+Have I taken the evening pill?,query_history
+Did I confirm today's dose?,query_history
+List my past medication,query_history
+Check if I took it,query_history
+When did I last mark it taken?,query_history
+My last dose time?,query_history
+Show medication activity,query_history
+Did I take it already today?,query_history
+When did I take the tablet?,query_history
+When was my dose yesterday?,query_history
+Did I log today's pill?,query_history
+What time was my last medication?,query_history
+Check yesterday's dose,query_history
+Did I confirm this morning?,query_history
+Have I missed any recently?,query_history
+When did I last take my meds?,query_history
+Show my last 3 doses,query_history
+Did I take it last night?,query_history
+Was today's dose recorded?,query_history
+show me what I took yesterday,query_history
+did I log it earlier?,query_history
+did I take anything yesterday?,query_history
+show yesterday's doses,query_history
+what did I log today?,query_history
+did I already confirm my pill?,query_history
+when did I take it last?,query_history
+How many doses did I take this week?,adherence_summary
+Show my adherence rate,adherence_summary
+What's my compliance percentage?,adherence_summary
+How consistent am I?,adherence_summary
+Adherence stats please,adherence_summary
+Did I miss many doses?,adherence_summary
+Show weekly summary,adherence_summary
+Medication adherence report,adherence_summary
+How am I doing with my meds?,adherence_summary
+Give me monthly stats,adherence_summary
+Am I taking meds regularly?,adherence_summary
+Show my performance,adherence_summary
+What's my dose completion rate?,adherence_summary
+Summary of my medication intake,adherence_summary
+Did I take all doses this month?,adherence_summary
+Adherence overview,adherence_summary
+Show missed doses count,adherence_summary
+How many did I skip?,adherence_summary
+Give adherence details,adherence_summary
+Weekly medication summary,adherence_summary
+My medication report,adherence_summary
+Am I compliant?,adherence_summary
+Show my stats,adherence_summary
+Adherence for last 30 days,adherence_summary
+How many doses completed?,adherence_summary
+Overall adherence score?,adherence_summary
+Missed vs taken doses?,adherence_summary
+Show adherence summary,adherence_summary
+How often do I forget?,adherence_summary
+Give my med stats,adherence_summary
+What's my weekly adherence?,adherence_summary
+Show me this month's stats,adherence_summary
+How many doses missed this week?,adherence_summary
+Give me adherence numbers,adherence_summary
+Am I improving?,adherence_summary
+Show dose consistency,adherence_summary
+Monthly medication report,adherence_summary
+How many times did I forget?,adherence_summary
+Overall med compliance?,adherence_summary
+Show adherence chart,adherence_summary
+how's my adherence looking?,adherence_summary
+am I doing better this week?,adherence_summary
+what's my compliance lately?,adherence_summary
+how's my medication consistency?,adherence_summary
+what's my weekly adherence?,adherence_summary
+did I miss many doses?,adherence_summary
+show my monthly compliance,adherence_summary
+how well am I sticking to meds?,adherence_summary
+Change my medication time,change_schedule
+Move my pill to 8am,change_schedule
+I want to take it at 9 instead,change_schedule
+Reschedule my meds,change_schedule
+Change dose time to evening,change_schedule
+Update medication schedule,change_schedule
+Switch to 7pm,change_schedule
+Move reminder to 10am,change_schedule
+I need a new time,change_schedule
+Adjust my schedule,change_schedule
+Set meds for 6am,change_schedule
+Can I change the time?,change_schedule
+Reschedule to tomorrow morning,change_schedule
+Modify medication timing,change_schedule
+Change my medicne schedule,change_schedule
+Move it earlier,change_schedule
+Move it later,change_schedule
+Change reminder hour,change_schedule
+Update dose timing,change_schedule
+Switch from morning to night,change_schedule
+Change pill schedule please,change_schedule
+New medication time 5pm,change_schedule
+Adjust dose schedule,change_schedule
+Set a different time,change_schedule
+Change daily reminder time,change_schedule
+Change my meds to 11am,change_schedule
+Move pill time to 4pm,change_schedule
+I want a new reminder time,change_schedule
+Shift it to night time,change_schedule
+Reschedule my daily pill,change_schedule
+Update reminder to 9pm,change_schedule
+Set new schedule at 7am,change_schedule
+Change it from 8 to 10,change_schedule
+Adjust pill timing,change_schedule
+Modify daily med time,change_schedule
+Add a new medication,add_medication
+I need to add another pill,add_medication
+Add vitamin D,add_medication
+Start tracking new meds,add_medication
+Add my blood pressure medication,add_medication
+I want to add a prescription,add_medication
+Register a new medication,add_medication
+Add ibuprofen,add_medication
+Track a new pill,add_medication
+Add medicine to my list,add_medication
+New medication entry,add_medication
+Add metformin 500mg,add_medication
+Include a new drug,add_medication
+Add my antibiotics,add_medication
+I have a new prescription,add_medication
+Log a new medication,add_medication
+Add medicne,add_medication
+Start new pill reminder,add_medication
+Add daily supplement,add_medication
+Add thyroid medication,add_medication
+Include vitamin C,add_medication
+Add painkiller,add_medication
+Track new dose,add_medication
+Add another medication schedule,add_medication
+New med reminder,add_medication
+Add new supplement,add_medication
+I need to track aspirin,add_medication
+Add 20mg atorvastatin,add_medication
+Register vitamin B12,add_medication
+Add my new heart medication,add_medication
+Track antibiotic dose,add_medication
+Add iron tablets,add_medication
+I got prescribed something new,add_medication
+Add new daily capsule,add_medication
+Start reminder for allergy meds,add_medication
+Hi,general
+Hello,general
+Hey there,general
+Good morning,general
+Good evening,general
+Thanks,general
+Thank you so much,general
+Appreciate it,general
+How are you?,general
+What's up?,general
+Yo,general
+Hey bot,general
+Thanks a lot,general
+Okay,general
+Cool,general
+Nice,general
+Got it,general
+Alright,general
+Good job,general
+You're helpful,general
+Thank you!,general
+Much appreciated,general
+Thx,general
+ty,general
+Hi there,general
+Good afternoon,general
+Hey,general
+Howdy,general
+Sup,general
+Ok thanks,general
+Thanks buddy,general
+Thanks for the help,general
+Hello there,general
+Morning,general
+Evening,general
+See you,general
+Bye,general
+Goodbye,general
+Catch you later,general
+Have a good day,general
+Hey how's it going,general
+Thank you for reminding me,general
+Appreciate the reminder,general
+Okay great thanks,general
+Nice work,general
+Thanks a bunch,general
+Hello again,general
+Hi bot,general
+Good to see you,general
+Thanks for the help today,general
+when is my next dose?,check_schedule
+what time do I take my meds today?,check_schedule
+do I have any pills scheduled today?,check_schedule
+show me today's medication schedule,check_schedule
+what's on my med schedule?,check_schedule
+when am I supposed to take it?,check_schedule
+what time is my pill today?,check_schedule
+do I take anything tonight?,check_schedule
+any meds due today?,check_schedule
+what's my schedule for today?,check_schedule
+am I taking anything this morning?,check_schedule
+do I have a dose later?,check_schedule
+what time is my evening medication?,check_schedule
+when do I take my next tablet?,check_schedule
+show upcoming doses,check_schedule
+what's planned for my meds?,check_schedule
+do I have meds this afternoon?,check_schedule
+when is today's first dose?,check_schedule
+when's my medication today?,check_schedule
+tell me today's schedule,check_schedule
+when is my next dose scheduled?,check_schedule
+what time are my meds today?,check_schedule
+am I supposed to take anything this afternoon?,check_schedule
+what's my medication schedule for today?,check_schedule
+do I have any pills due today?,check_schedule
+what time is my medicine set for?,check_schedule
+is there anything scheduled tonight?,check_schedule
+what meds are planned for today?,check_schedule
+when do I take my tablets today?,check_schedule
+show me my pill schedule,check_schedule
+do I have medication later today?,check_schedule
+what time is today's dose?,check_schedule
+what's my med timing today?,check_schedule
+are there any doses coming up?,check_schedule
+what do I take today?,check_schedule
+tell me today's pill plan,check_schedule
+what meds are on today's list?,check_schedule
+is anything due this evening?,check_schedule
+when's my first pill today?,check_schedule
+what's my prescription schedule?,check_schedule
+do I take anything in the morning?,check_schedule
+when do I take my meds today?,check_schedule
+what time should I take my medicine?,check_schedule
+show today's medication timing,check_schedule
+do I have pills scheduled later?,check_schedule
+what time are my medications?,check_schedule
+what's my dosing schedule?,check_schedule
+is there a pill tonight?,check_schedule
+when is today's medication?,check_schedule
+what do I need to take today?,check_schedule
+what's scheduled for my meds?,check_schedule
+are my pills due today?,check_schedule
+what time is my dose today?,check_schedule
+when is the medication today?,check_schedule
+what meds should I take now?,check_schedule
+do I have any medication today?,check_schedule
+what's my schedule looking like?,check_schedule
+what pills are planned today?,check_schedule
+when do I take today's dose?,check_schedule
+show my schedule for meds,check_schedule
+what medications am I currently taking?,medication_info
+list all my meds,medication_info
+what's my paracetamol dosage?,medication_info
+tell me about my medications,medication_info
+what pills do I have registered?,medication_info
+show my medication list,medication_info
+what am I taking daily?,medication_info
+give me details about my meds,medication_info
+how much am I taking of aspirin?,medication_info
+what's my dosage for vitamin D?,medication_info
+what medications do I have active?,medication_info
+show me all my prescriptions,medication_info
+what meds am I currently on?,medication_info
+how much paracetamol am I taking?,medication_info
+what's my aspirin dosage?,medication_info
+tell me my medication details,medication_info
+what dose am I on right now?,medication_info
+list my current medications,medication_info
+what is my dosage amount?,medication_info
+what's my vitamin dosage?,medication_info
+how often am I taking this pill?,medication_info
+what are my medication strengths?,medication_info
+show my active meds,medication_info
+what's my current prescription?,medication_info
+how many mg am I taking?,medication_info
+what's the strength of my medication?,medication_info
+tell me about my current meds,medication_info
+what medications are listed?,medication_info
+how much do I take per dose?,medication_info
+show dosage information,medication_info
+what pills am I tracking?,medication_info
+give me my med details,medication_info
+what's my treatment plan?,medication_info
+show prescription details,medication_info
+how many times daily do I take it?,medication_info
+what medication schedule do I have?,medication_info
+what drugs am I on?,medication_info
+show all medication info,medication_info
+what's my pill dosage?,medication_info
+tell me my dose information,medication_info
+change paracetamol to 1000mg,update_medication
+update my aspirin dosage,update_medication
+modify my medication schedule,update_medication
+increase my dosage to 2 tablets,update_medication
+reduce my vitamin D to 500mg,update_medication
+change my pill amount,update_medication
+edit my medication details,update_medication
+update my med schedule,update_medication
+switch dosage to 750mg,update_medication
+adjust my medication amount,update_medication
+change my dosage to 1000mg,update_medication
+update the amount of paracetamol,update_medication
+modify my pill timing,update_medication
+increase my tablet dosage,update_medication
+decrease my aspirin dose,update_medication
+edit my medication amount,update_medication
+change my prescription strength,update_medication
+adjust my daily pill amount,update_medication
+update how often I take it,update_medication
+switch my dosage schedule,update_medication
+revise my prescription,update_medication
+change my medication frequency,update_medication
+update pill details,update_medication
+edit medication timing,update_medication
+modify dosage information,update_medication
+change how much I take,update_medication
+adjust my pill schedule,update_medication
+update medication plan,update_medication
+switch my dosage amount,update_medication
+edit my med routine,update_medication
+change my daily medication plan,update_medication
+increase dosage frequency,update_medication
+reduce medication amount,update_medication
+update my prescription timing,update_medication
+change pill amount per dose,update_medication
+modify prescription strength,update_medication
+adjust my medicine schedule,update_medication
+update medication instructions,update_medication
+switch my med to twice daily,update_medication
+change prescription dosage,update_medication
+stop tracking paracetamol,delete_medication
+remove this medication,delete_medication
+delete my aspirin,delete_medication
+cancel my vitamin D tracking,delete_medication
+remove that pill from my list,delete_medication
+stop this medication,delete_medication
+delete my current prescription,delete_medication
+take aspirin off my list,delete_medication
+remove my heart medication,delete_medication
+stop reminders for this pill,delete_medication
+remove my paracetamol,delete_medication
+delete this pill from my list,delete_medication
+stop tracking this medication,delete_medication
+cancel my aspirin prescription,delete_medication
+remove this drug,delete_medication
+delete my vitamin D,delete_medication
+stop this pill permanently,delete_medication
+remove that medication entry,delete_medication
+delete my prescription,delete_medication
+cancel this medication,delete_medication
+remove pill schedule,delete_medication
+delete my daily medication,delete_medication
+stop taking aspirin,delete_medication
+remove med tracking,delete_medication
+delete this medication record,delete_medication
+cancel my pill schedule,delete_medication
+stop reminders for aspirin,delete_medication
+remove this from my meds,delete_medication
+delete medication tracking,delete_medication
+stop this prescription from tracking,delete_medication
+cancel this drug,delete_medication
+delete the med from my list,delete_medication
+remove medication completely,delete_medication
+stop logging this pill,delete_medication
+delete this dose schedule,delete_medication
+when's my next pill?,check_next_dose
+what time is my next medication?,check_next_dose
+when do I take it next?,check_next_dose
+when is my next tablet due?,check_next_dose
+what's my next dose time?,check_next_dose
+next time I take my meds?,check_next_dose
+when's the upcoming dose?,check_next_dose
+when do I take my next one?,check_next_dose
+what time is the next pill?,check_next_dose
+when's my next scheduled med?,check_next_dose
+when is my next pill due?,check_next_dose
+what time is my next dose?,check_next_dose
+when do I take my next tablet?,check_next_dose
+when is my next medication time?,check_next_dose
+what's the next pill time?,check_next_dose
+when am I due next?,check_next_dose
+next dose time?,check_next_dose
+when do I take it again?,check_next_dose
+when's my next medication?,check_next_dose
+what time is my upcoming pill?,check_next_dose
+when is the next scheduled dose?,check_next_dose
+how long until next dose?,check_next_dose
+what's the next med schedule?,check_next_dose
+when do I need to take meds again?,check_next_dose
+what's my next pill reminder?,check_next_dose
+when is my next capsule?,check_next_dose
+what time do I take the next one?,check_next_dose
+next medication due?,check_next_dose
+when's my following dose?,check_next_dose
+what's the next time I take meds?,check_next_dose
+when is the next tablet?,check_next_dose
+when's my next scheduled pill?,check_next_dose
+what time is next medication?,check_next_dose
+when do I take another pill?,check_next_dose
+what's the next dosage time?,check_next_dose
+when is my upcoming medication?,check_next_dose
+next pill time please,check_next_dose
+when do I take meds next?,check_next_dose
+what's the next prescription time?,check_next_dose
+when is my next dose scheduled?,check_next_dose
+set reminders for 8am,set_reminder_preference
+remind me 15 minutes early,set_reminder_preference
+change reminder time,set_reminder_preference
+set reminder 30 mins before,set_reminder_preference
+remind me earlier,set_reminder_preference
+change my reminder settings,set_reminder_preference
+set alert 10 minutes before dose,set_reminder_preference
+adjust reminder timing,set_reminder_preference
+remind me an hour before,set_reminder_preference
+update reminder preference,set_reminder_preference
+set my reminder for 8am,set_reminder_preference
+remind me earlier than usual,set_reminder_preference
+change my reminder to 7am,set_reminder_preference
+set notification 20 minutes before,set_reminder_preference
+adjust my alert timing,set_reminder_preference
+move reminder to evening,set_reminder_preference
+update my reminder time,set_reminder_preference
+set alerts 30 minutes early,set_reminder_preference
+change when I get notified,set_reminder_preference
+remind me 10 mins before dose,set_reminder_preference
+set my alerts earlier,set_reminder_preference
+change my med reminder time,set_reminder_preference
+update alert preferences,set_reminder_preference
+move my reminder to 9pm,set_reminder_preference
+set reminder 1 hour before,set_reminder_preference
+adjust how early I'm reminded,set_reminder_preference
+change notification lead time,set_reminder_preference
+set my reminders differently,set_reminder_preference
+update reminder schedule,set_reminder_preference
+modify my alert time,set_reminder_preference
+set notification for mornings,set_reminder_preference
+change reminder settings,set_reminder_preference
+set my pill alert earlier,set_reminder_preference
+adjust notification timing,set_reminder_preference
+change when I get reminder,set_reminder_preference
+skip my next dose,skip_dose
+skip the next one,skip_dose
+I want to skip my next medication,skip_dose
+skip next,skip_dose
+I'll skip the next dose,skip_dose
+skip my upcoming dose,skip_dose
+don't take my next dose,skip_dose
+cancel my next pill,skip_dose
+I'm skipping the next one,skip_dose
+skip the next scheduled dose,skip_dose
+I won't take my next dose,skip_dose
+cancel the next medication,skip_dose
+skip the upcoming pill,skip_dose
+I'm not taking the next one,skip_dose
+skip next dose please,skip_dose
+don't remind me for the next dose,skip_dose
+I want to skip the next one,skip_dose
+cancel next dose,skip_dose
+skip the following dose,skip_dose
+I'll miss the next one,skip_dose
+don't take the next pill,skip_dose
+skip my next scheduled medication,skip_dose
+I'm skipping my next pill,skip_dose
+cancel the next scheduled dose,skip_dose
+skip the next medication reminder,skip_dose
+I won't be taking the next dose,skip_dose
+skip upcoming medication,skip_dose
+don't want the next dose,skip_dose
+cancel my upcoming pill,skip_dose
+skip next scheduled pill,skip_dose
+I'll skip my next med,skip_dose
+not taking next dose,skip_dose
+skip the next tablet,skip_dose
+cancel upcoming dose,skip_dose
+I'm not doing the next one,skip_dose
+skip my following dose,skip_dose
+don't take next medication,skip_dose
+I want to skip upcoming dose,skip_dose
+cancel next scheduled medication,skip_dose
+skip my next tablet,skip_dose
+remove panadol,delete_medication
+remove aspirin from my schedule,delete_medication
+I want to remove paracetamol,delete_medication
+remove metformin from my list,delete_medication
+remove vitamin D,delete_medication
+I want to remove aspirin,delete_medication
+remove ibuprofen,delete_medication
+remove my morning pill,delete_medication
+I want to remove medication,delete_medication
+remove that medication,delete_medication
+remove the pill,delete_medication
+remove my evening dose,delete_medication
+I want to remove my medication,delete_medication
+remove this pill,delete_medication
+remove my daily medication,delete_medication
+I want to remove the medication,delete_medication
+remove paracetamol from schedule,delete_medication
+remove aspirin completely,delete_medication
+I want to remove this med,delete_medication
+remove my prescription,delete_medication
+remove panadol from my list,delete_medication
+I want to remove my aspirin,delete_medication
+remove my paracetamol medication,delete_medication
+remove metformin completely,delete_medication
+I want to remove vitamin D,delete_medication
+remove this medication from tracking,delete_medication
+remove my ibuprofen,delete_medication
+I want to remove my morning medication,delete_medication
+remove the evening pill,delete_medication
+remove my daily pill,delete_medication
+I want to remove that medication,delete_medication
+remove medication from list,delete_medication
+remove my med,delete_medication
+I want to remove the pill,delete_medication
+remove this from schedule,delete_medication
+remove aspirin from tracking,delete_medication
+I want to remove my prescription,delete_medication
+remove the medication completely,delete_medication
+remove my pill schedule,delete_medication
+I want to remove this medication,delete_medication
+change aspirin time to 9am,change_schedule
+aspirin at 9am instead,change_schedule
+move aspirin to 9am,change_schedule
+reschedule aspirin to 9am,change_schedule
+switch aspirin time to 9am,change_schedule
+update aspirin to 9am,change_schedule
+aspirin 9am,change_schedule
+change paracetamol to 8pm,change_schedule
+paracetamol at 8pm,change_schedule
+move my morning pill to 7am,change_schedule
+reschedule my evening dose to 10pm,change_schedule
+change my 8am dose to 9am,change_schedule
+update vitamin D to 6pm,change_schedule
+switch my pill time to evening,change_schedule
+change metformin to 10am,change_schedule
+move panadol to 9pm,change_schedule
+reschedule ibuprofen to 2pm,change_schedule
+update my morning medication to 8am,change_schedule
+switch aspirin to evening,change_schedule
+change my evening pill to 9pm,change_schedule
+move my afternoon dose to 3pm,change_schedule
+reschedule paracetamol to 7am,change_schedule
+update my pill to 11am,change_schedule
+switch metformin time to 8am,change_schedule
+change vitamin D to morning,change_schedule
+move my dose to 10am,change_schedule
+reschedule my medication to 6pm,change_schedule
+update ibuprofen time to 1pm,change_schedule
+switch my morning med to 7am,change_schedule
+change dose time to 8pm,change_schedule
+move aspirin time to 8am,change_schedule
+reschedule to 9am,change_schedule
+update panadol to 10pm,change_schedule
+switch pill to 7pm,change_schedule
+change medication time to 6am,change_schedule
+move med to evening,change_schedule
+reschedule dose to morning,change_schedule
+update time to 9pm,change_schedule
+switch to 8am instead,change_schedule
+change to afternoon,change_schedule
+add aspirin 500mg at 8am and 8pm,add_medication
+add paracetamol 1000mg twice daily,add_medication
+add metformin 500mg at 9am,add_medication
+add vitamin D 1000iu once daily,add_medication
+add ibuprofen 200mg at 8am 2pm 8pm,add_medication
+add medication called aspirin,add_medication
+add a medication called paracetamol,add_medication
+I want to add a medication called metformin,add_medication
+add pill called vitamin D,add_medication
+add new medication aspirin 500mg,add_medication
+I need to add aspirin 100mg daily,add_medication
+add paracetamol at 8am and 8pm,add_medication
+add metformin 500mg twice per day,add_medication
+I want to add ibuprofen 200mg,add_medication
+add medication aspirin at 9am,add_medication
+add paracetamol 500mg once daily at 8pm,add_medication
+I need to add vitamin D at 7pm,add_medication
+add new pill metformin 500mg,add_medication
+add aspirin at 8am,add_medication
+I want to add paracetamol 2 tablets daily,add_medication
+add medication called ibuprofen 200mg at 1pm,add_medication
+I need to track aspirin 100mg,add_medication
+add metformin once per day,add_medication
+add paracetamol at 8am 2pm 8pm,add_medication
+I want to add a new medication called aspirin at 9am,add_medication
+add panadol 500mg,add_medication
+add medication paracetamol 1 tablet,add_medication
+I want to add aspirin 100mg at 9am,add_medication
+add new medication metformin,add_medication
+add vitamin D 2000iu daily,add_medication
+I need to add ibuprofen at 1pm,add_medication
+add medication called panadol,add_medication
+add new pill aspirin,add_medication
+I want to add metformin 500mg twice daily,add_medication
+add paracetamol 2 tablets,add_medication
+add medication vitamin D at 7pm,add_medication
+I need to add new medication aspirin,add_medication
+add ibuprofen 200mg once daily,add_medication
+add medication called vitamin D 1000iu,add_medication
+I want to add panadol at 8pm,add_medication
+add new medication paracetamol at 8am,add_medication
+add aspirin to my medications,add_medication
+I need to add metformin at 9am,add_medication
+add medication ibuprofen,add_medication
+I want to add vitamin D once daily,add_medication
+show my schedule for tonight,check_schedule
+what medications tonight,check_schedule
+do I have meds this evening,check_schedule
+show tonight's doses,check_schedule
+what pills tonight,check_schedule
+medications for tonight,check_schedule
+show my schedule for this morning,check_schedule
+what meds this morning,check_schedule
+do I have pills this morning,check_schedule
+morning medication schedule,check_schedule
+what do I take this morning,check_schedule
+show afternoon schedule,check_schedule
+what meds this afternoon,check_schedule
+afternoon doses,check_schedule
+show evening schedule,check_schedule
+what medications this evening,check_schedule
+do I have doses tonight,check_schedule
+show my morning pills,check_schedule
+what's scheduled this morning,check_schedule
+medications for this afternoon,check_schedule
+show my evening doses,check_schedule
+what pills this evening,check_schedule
+do I have meds this afternoon,check_schedule
+show tonight's medications,check_schedule
+what's on my schedule tonight,check_schedule
+medications this morning,check_schedule
+show my afternoon schedule,check_schedule
+what doses this evening,check_schedule
+do I have pills tonight,check_schedule
+show my morning medication,check_schedule
+what's scheduled tonight,check_schedule
+medications for the morning,check_schedule
+show evening pills,check_schedule
+what meds tonight,check_schedule
+do I have doses this morning,check_schedule
+show my tonight's schedule,check_schedule
+what medications this morning,check_schedule
+doses for this afternoon,check_schedule
+show my evening medication,check_schedule
+what pills this afternoon,check_schedule
+remind me to take aspirin 30 minutes earlier,set_reminder_preference
+remind me to take my 8pm dosage 20 minutes earlier,set_reminder_preference
+set reminder for aspirin 30 minutes before,set_reminder_preference
+remind me 30 mins before my dose,set_reminder_preference
+alert me 20 minutes before aspirin,set_reminder_preference
+notify me 30 minutes early,set_reminder_preference
+remind me before my dose,set_reminder_preference
+set alert 30 minutes before medication,set_reminder_preference
+remind me half hour before,set_reminder_preference
+notify me earlier for my pills,set_reminder_preference
+remind me 20 mins before dose,set_reminder_preference
+set reminder to alert me early,set_reminder_preference
+remind me 15 minutes before my medication,set_reminder_preference
+notify me before dose time,set_reminder_preference
+remind me earlier for my pills,set_reminder_preference
+alert me 30 minutes before,set_reminder_preference
+remind me to take paracetamol early,set_reminder_preference
+set reminder 20 minutes before dose,set_reminder_preference
+notify me 15 mins early,set_reminder_preference
+remind me before medication time,set_reminder_preference
+alert me earlier for aspirin,set_reminder_preference
+set reminder 30 mins early,set_reminder_preference
+remind me to take my dose earlier,set_reminder_preference
+notify me before my pill,set_reminder_preference
+remind me 10 minutes before,set_reminder_preference
+alert me half hour before dose,set_reminder_preference
+set reminder earlier for medication,set_reminder_preference
+remind me before taking pills,set_reminder_preference
+notify me 30 mins before,set_reminder_preference
+remind me earlier than scheduled,set_reminder_preference
+alert me before my medication,set_reminder_preference
+set early reminder for dose,set_reminder_preference
+remind me 20 minutes early,set_reminder_preference
+notify me before pill time,set_reminder_preference
+remind me ahead of time,set_reminder_preference
+alert me early for my dose,set_reminder_preference
+set reminder before medication time,set_reminder_preference
+remind me 25 minutes before,set_reminder_preference
+notify me earlier than usual,set_reminder_preference
+I took my paracetamol dose,confirm_dose
+just took aspirin,confirm_dose
+I've taken metformin,confirm_dose
+done with vitamin D,confirm_dose
+I had my ibuprofen,confirm_dose
+just had panadol,confirm_dose
+I already took my aspirin,confirm_dose
+finished paracetamol,confirm_dose
+I have taken metformin,confirm_dose
+vitamin D taken,confirm_dose
+I swallowed my ibuprofen,confirm_dose
+took panadol this morning,confirm_dose
+took aspirin this evening,confirm_dose
+I've had my paracetamol,confirm_dose
+yep took metformin,confirm_dose
+yes I took vitamin D,confirm_dose
+ibuprofen taken,confirm_dose
+I just took panadol,confirm_dose
+took aspirin just now,confirm_dose
+I already had paracetamol,confirm_dose
+all done with metformin,confirm_dose
+finished vitamin D,confirm_dose
+I've completed ibuprofen,confirm_dose
+I took panadol tablet,confirm_dose
+I've taken aspirin already,confirm_dose
+I just finished paracetamol,confirm_dose
+had metformin,confirm_dose
+took vitamin D a minute ago,confirm_dose
+I did take ibuprofen,confirm_dose
+I confirm panadol taken,confirm_dose
+I've consumed aspirin,confirm_dose
+took paracetamol earlier,confirm_dose
+already done with metformin,confirm_dose
+I took vitamin D pill,confirm_dose
+ibuprofen is taken,confirm_dose
+just completed panadol,confirm_dose
+I have taken aspirin dose,confirm_dose
+yep swallowed paracetamol,confirm_dose
+I took metformin late,confirm_dose
+just had vitamin D,confirm_dose
+remind me in 20 minutes,snooze_reminder
+snooze for 30 minutes,snooze_reminder
+remind me in 40 minutes,snooze_reminder
+delay for 25 minutes,snooze_reminder
+push back 15 minutes,snooze_reminder
+snooze 45 minutes,snooze_reminder
+remind me in 50 minutes,snooze_reminder
+postpone 35 minutes,snooze_reminder
+delay 20 mins,snooze_reminder
+snooze half hour,snooze_reminder
+remind me in 1.5 hours,snooze_reminder
+push it 40 minutes,snooze_reminder
+delay 15 mins please,snooze_reminder
+snooze 25 min,snooze_reminder
+remind me in 55 minutes,snooze_reminder
+postpone half an hour,snooze_reminder
+delay it 30 mins,snooze_reminder
+snooze for 20 min,snooze_reminder
+remind me in 35 mins,snooze_reminder
+push back half hour,snooze_reminder
+did I take aspirin today,query_history
+when did I last take paracetamol,query_history
+have I taken metformin,query_history
+show vitamin D history,query_history
+did I take ibuprofen this morning,query_history
+when was my last panadol,query_history
+have I had aspirin today,query_history
+check if I took paracetamol,query_history
+did I take my metformin,query_history
+when did I have vitamin D,query_history
+have I taken ibuprofen,query_history
+show panadol records,query_history
+did I take my aspirin dose,query_history
+when was paracetamol taken,query_history
+have I had metformin today,query_history
+check vitamin D log,query_history
+did I complete ibuprofen,query_history
+when did I take panadol,query_history
+have I taken my aspirin,query_history
+show my paracetamol history,query_history
+what's my adherence,adherence_summary
+how many doses taken,adherence_summary
+show my stats,adherence_summary
+am I on track,adherence_summary
+how's my compliance,adherence_summary
+what's my success rate,adherence_summary
+how many missed,adherence_summary
+show adherence,adherence_summary
+am I doing well,adherence_summary
+what's my percentage,adherence_summary
+how many on time,adherence_summary
+show my record,adherence_summary
+am I consistent,adherence_summary
+what's my score,adherence_summary
+how many skipped,adherence_summary
+show my performance,adherence_summary
+am I improving,adherence_summary
+what's my rate,adherence_summary
+how many late,adherence_summary
+show compliance,adherence_summary
+change aspirin dosage to 100mg,update_medication
+update paracetamol to 1000mg,update_medication
+modify metformin dosage,update_medication
+increase vitamin D,update_medication
+reduce ibuprofen dose,update_medication
+change panadol amount,update_medication
+update aspirin strength,update_medication
+modify paracetamol frequency,update_medication
+increase metformin to 1000mg,update_medication
+reduce vitamin D to 500iu,update_medication
+change ibuprofen to 400mg,update_medication
+update panadol dosage,update_medication
+modify aspirin amount,update_medication
+increase paracetamol dose,update_medication
+reduce metformin strength,update_medication
+change vitamin D frequency,update_medication
+update ibuprofen amount,update_medication
+modify panadol strength,update_medication
+increase aspirin dosage,update_medication
+reduce paracetamol to 500mg,update_medication
+next medication,check_next_dose
+upcoming dose,check_next_dose
+next pill time,check_next_dose
+when's next,check_next_dose
+next dose,check_next_dose
+upcoming medication,check_next_dose
+next tablet,check_next_dose
+when next dose,check_next_dose
+next med,check_next_dose
+upcoming pill,check_next_dose
+next scheduled,check_next_dose
+when's upcoming,check_next_dose
+next medication time,check_next_dose
+upcoming dose time,check_next_dose
+next pill,check_next_dose
+when am I due,check_next_dose
+next scheduled dose,check_next_dose
+upcoming med,check_next_dose
+next dose time,check_next_dose
+when do I take next,check_next_dose
+list my medications,medication_info
+what meds do I have,medication_info
+show medications,medication_info
+my medication list,medication_info
+what pills am I on,medication_info
+show my meds,medication_info
+medication details,medication_info
+what do I take,medication_info
+show prescriptions,medication_info
+my pills,medication_info
+what medications,medication_info
+show med list,medication_info
+my prescriptions,medication_info
+what am I taking,medication_info
+show pill list,medication_info
+medication info,medication_info
+what meds,medication_info
+show my pills,medication_info
+my meds,medication_info
+what do I take daily,medication_info
+show my schedule,check_schedule
+what's scheduled,check_schedule
+today's doses,check_schedule
+my schedule,check_schedule
+what's planned,check_schedule
+show doses,check_schedule
+today's meds,check_schedule
+schedule please,check_schedule
+what pills today,check_schedule
+show today,check_schedule
+my doses,check_schedule
+what's today,check_schedule
+show medication schedule,check_schedule
+today's pills,check_schedule
+schedule for today,check_schedule
+what do I take today,check_schedule
+show my meds today,check_schedule
+today's schedule,check_schedule
+what's on schedule,check_schedule
+show pills today,check_schedule
+hi there,general
+hello there,general
+hey there,general
+good afternoon,general
+how's it going,general
+what's up,general
+yo,general
+sup,general
+heya,general
+howdy,general
+greetings,general
+hi again,general
+hello again,general
+hey again,general
+thanks a lot,general
+thank you so much,general
+thanks very much,general
+appreciate it,general
+cheers,general
+much appreciated,general
+thank you very much,general
+thanks mate,general
+ty,general
+thx,general
+tyvm,general
+ok thanks,general
+okay cool,general
+ok great,general
+sounds perfect,general
+that's great,general
+wonderful,general
+excellent,general
+fantastic,general
+brilliant,general
+amazing,general
+terrific,general
+superb,general
+lovely,general
+splendid,general
+marvelous,general
+understood,general
+I understand,general
+makes sense,general
+I see,general
+right,general
+I get it,general
+clear,general
+copy that,general
+roger,general
+affirmative,general
+can you help,general
+I need help,general
+help me,general
+assist me,general
+I need assistance,general
+support please,general
+guide me,general
+show me,general
+explain please,general
+tell me,general
+what do you do,general
+what can you do,general
+how do you work,general
+what are your features,general
+what's your function,general
+how can you help,general
+what can you help with,general
+what do you offer,general
+tell me about yourself,general
+introduce yourself,general
+goodbye now,general
+bye bye,general
+see ya,general
+catch you,general
+later gator,general
+peace out,general
+I'm off,general
+gotta go,general
+talk soon,general
+until next time,general
+what medications do I have,medication_info
+what meds do I have,medication_info
+what pills do I have,medication_info
+what medications do I have registered,medication_info
+what meds do I have in my list,medication_info
+what pills do I have tracked,medication_info
+which medications do I have,medication_info
+which meds do I have,medication_info
+which pills do I have,medication_info
+what medications am I on,medication_info
+what meds am I on,medication_info
+what pills am I on,medication_info
+tell me what medications I have,medication_info
+show me what medications I have,medication_info
+list what medications I have,medication_info
+what medications have I added,medication_info
+what meds have I added,medication_info
+what pills have I added,medication_info
+what are my medications,medication_info
+what are my meds,medication_info
+what are my pills,medication_info
