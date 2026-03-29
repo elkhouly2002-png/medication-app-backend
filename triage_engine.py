@@ -125,6 +125,7 @@ class TriageEngine:
         'mild rash', 'skin irritation', 'itchy skin',
         # Medication related
         'missed several doses', 'not sure about medication', 'need refill',
+        'need a refill', 'prescription refill', 'need a prescription refill',
         'prescription expired', 'side effects',
         # Digestive
         'stomach ache', 'nausea', 'constipation', 'bloating',
@@ -143,8 +144,8 @@ class TriageEngine:
         # Tiredness
         'a bit tired', 'slightly tired', 'mild fatigue',
         # Digestive
-        'mild nausea', 'slightly nauseous', 'upset stomach', 'indigestion',
-        'mild stomach pain',
+        'mild nausea', 'i have mild nausea', 'slightly nauseous', 'upset stomach',
+        'indigestion', 'mild stomach pain',
         # Minor skin
         'minor cut', 'small cut', 'scratch', 'bruise', 'minor bruise',
         # Other
