@@ -81,7 +81,8 @@ class TriageEngine:
         'fever fourty degrees', 'temperature above 40',
         'not waking up', 'blue lips', 'blu lips', 'blue lipes',
         'fingertips are blue', 'fingertips went blu', 'skin is bluish',
-        'left arm numb', 'left arm is numb', 'arm is numb', 'arm went numb',
+        'left arm numb', 'left arm is numb', 'arm is numb', 'arm us numb',
+        'my arm is numb', 'my arm us numb', 'arm went numb',
         'numbness in arm', 'nummness in arm',
         # About to pass out
         'about to pass out', 'about to faint', 'i am about to pass out',
@@ -128,7 +129,7 @@ class TriageEngine:
         'need a refill', 'prescription refill', 'need a prescription refill',
         'prescription expired', 'side effects',
         # Digestive
-        'stomach ache', 'nausea', 'constipation', 'bloating',
+        'stomach ache', 'severe nausea', 'constipation', 'bloating',
         # Other
         'fatigue', 'tired all the time', 'sleeping too much', 'weight loss',
         'weight gain', 'feeling off', 'not feeling well',
