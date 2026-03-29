@@ -83,6 +83,11 @@ class TriageEngine:
         'fingertips are blue', 'fingertips went blu', 'skin is bluish',
         'left arm numb', 'left arm is numb', 'arm is numb', 'arm went numb',
         'numbness in arm', 'nummness in arm',
+        # About to pass out
+        'about to pass out', 'about to faint', 'i am about to pass out',
+        'iam about to pass out', 'i am about to faint', 'going to pass out',
+        'going to faint', 'feel like passing out', 'feel like fainting',
+        'almost passed out', 'nearly passed out',
     ]
 
     URGENT_SYMPTOMS = [
@@ -130,8 +135,8 @@ class TriageEngine:
 
     SELF_CARE_SYMPTOMS = [
         # Cold / flu
-        'common cold', 'mild cold', 'runny nose', 'stuffy nose', 'sneezing',
-        'mild cough', 'sore throat mild',
+        'common cold', 'mild cold', 'runny nose', 'my nose is runny', 'nose is runny',
+        'stuffy nose', 'sneezing', 'mild cough', 'sore throat mild',
         # Minor pain
         'minor headache', 'headache', 'light headache', 'mild fever', 'low fever',
         'slight fever', 'minor pain', 'muscle ache', 'body ache',
