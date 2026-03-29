@@ -12,42 +12,80 @@ Classifies user-reported symptoms into 4 levels:
 class TriageEngine:
 
     EMERGENCY_SYMPTOMS = [
-        # Cardiac
-        'chest pain', 'chest tightness', 'chest pressure', 'heart attack',
-        'crushing chest', 'pain in my chest',
-        # Breathing
-        "can't breathe", 'cannot breathe', 'difficulty breathing', 'trouble breathing',
-        'shortness of breath', 'not breathing', 'stopped breathing',
-        # Neurological
-        'stroke', 'facial droop', 'face drooping', 'arm weakness', 'slurred speech',
-        'sudden confusion', 'seizure', 'unconscious', 'passed out', 'unresponsive',
+        # Cardiac - correct + typos
+        'chest pain', 'chset pain', 'chesst pain', 'chets pain', 'chst pain',
+        'chest painn', 'chest pan', 'chest pian', 'cheast pain', 'chestpain',
+        'chest is hurting', 'chest hurts', 'chest hurtting', 'chest hurst',
+        'my chest hurts', 'my chset hurts', 'my cheast hurts', 'my chesst hurts',
+        'chest tightness', 'chest pressure', 'chest discomfort',
+        'heart attack', 'hart attack', 'heart atack', 'heart attck', 'heart attak',
+        'hart atack', 'having a heart attack', 'having hart attack',
+        'pain in my chest', 'crushing chest', 'pressure on my chest',
+        'sharp pain in chest', 'pain radiating to arm',
+        # Breathing - correct + typos
+        "can't breathe", 'cant breathe', 'cant breath', 'cant breth', 'cant breaht',
+        'cannot breathe', 'cannot breath', 'can not breathe', 'i cant breathe',
+        'i cant breath', 'i cant breth', 'i cant breaht', 'i cant brethe',
+        'difficulty breathing', 'difficulti breathing', 'dificulty breathing',
+        'trouble breathing', 'truoble breathing', 'trobule breathing',
+        'shortness of breath', 'short of breath', 'not breathing',
+        'struggling to breathe', 'having trouble breathing',
+        # Neurological - correct + typos
+        'stroke', 'strok', 'i think i had stroke', 'i think i had strok',
+        'facial droop', 'face drooping', 'face droping', 'face is drooping',
+        'my face droped', 'arm weakness', 'slurred speech', 'slured speech',
+        'slurrd speech', 'slurred speach', 'slured speach',
+        'sudden confusion', 'suddden confusion', 'suddn confusion',
+        'seizure', 'siezure', 'seisure', 'seazure', 'seizuer',
+        'i had seizure', 'i had siezure', 'i had seisure',
+        'unconscious', 'unconcius', 'unconshus', 'unconcious',
+        'passed out', 'passd out', 'past out',
+        'lost consciousness', 'lost conciousness', 'lost consciousnes',
         'severe headache', 'worst headache', 'sudden headache',
-        # Allergic
-        'anaphylaxis', 'allergic reaction', 'throat closing', 'throat swelling',
-        'swelling throat', 'lips swelling', 'tongue swelling', 'hives all over',
-        # Overdose / poisoning
-        'overdose', 'took too many', 'too many pills', 'swallowed too much',
-        'poisoning', 'poisoned',
-        # Bleeding
-        'bleeding heavily', 'heavy bleeding', "won't stop bleeding", 'blood everywhere',
-        'coughing blood', 'vomiting blood',
+        # Allergic - correct + typos
+        'anaphylaxis', 'anaphlaxis', 'anaphylaxs', 'anaphalaxis',
+        'allergic reaction', 'alergic reaction', 'allergic reacton',
+        'severe allergic reaction', 'severe alergic reaction',
+        'throat closing', 'throut closing', 'throat closng',
+        'throat swelling', 'throatt swelling', 'throut sweling',
+        'tongue swelling', 'tounge swelling', 'tong swelling',
+        'lips swelling', 'lips sweling', 'lip swelling',
+        'hives all over',
+        # Overdose - correct + typos
+        'overdose', 'overdoze', 'overrdose', 'overdosee', 'ovrdose',
+        'took too many pills', 'took to many pills', 'took too manny pills',
+        'took too much medicine', 'took to much medicne',
+        'swallowed too much', 'swallwed too much', 'swalowed too many pills',
+        'too many pills', 'too much medication',
+        'accidentally took double', 'accidentaly took double',
+        'poisoning', 'poisoned', 'piosoning', 'poisonning',
+        'i think i am poisoned', 'i think i got poisoned',
+        # Bleeding - correct + typos
+        'bleeding heavily', 'bleding heavily', 'heavvy bleeding', 'haevy bleeding',
+        'heavy bleeding', 'bleding hevily',
+        "won't stop bleeding", 'wont stop bleeding', 'wont stop bleding',
+        'blood everywhere', 'coughing blood', 'coughing blod', 'coughing up blood',
+        'vomiting blood', 'vomting blood', 'vommiting blood',
         # Other
-        'very high fever', 'fever above 40', 'fever 40',
-        'not waking up', "won't wake up", 'blue lips', 'blue skin',
+        'very high fever', 'very hight fever', 'fever above 40', 'fever 40',
+        'fever fourty degrees', 'temperature above 40',
+        'not waking up', 'blue lips', 'blu lips', 'blue lipes',
+        'fingertips are blue', 'fingertips went blu', 'skin is bluish',
+        'left arm numb', 'left arm is numb', 'arm is numb', 'arm went numb',
+        'numbness in arm', 'nummness in arm',
     ]
 
     URGENT_SYMPTOMS = [
         # Fever
         'high fever', 'fever 39', 'fever above 39', 'very hot', 'burning up',
         # Head / Pain
-        'bad headache', 'migraine', 'severe pain', 'unbearable pain',
-        'intense pain',
+        'bad headache', 'migraine', 'severe pain', 'unbearable pain', 'intense pain',
         # Infection signs
         'spreading rash', 'red streaks', 'wound infected', 'swollen and red',
         'pus', 'abscess',
         # Medication reaction
-        'bad reaction', 'reaction to medication', 'medicine reaction', 'side effects bad',
-        'severe side effects', 'new rash after medication', 'hives',
+        'bad reaction', 'reaction to medication', 'medicine reaction',
+        'side effects bad', 'severe side effects', 'new rash after medication', 'hives',
         # Digestive
         'vomiting repeatedly', "can't keep anything down", 'severe vomiting',
         'severe diarrhea', 'blood in stool', 'black stool',
@@ -163,7 +201,7 @@ class TriageEngine:
         Assess the triage level from a user message.
         Returns a dict with level, title, action, advice, color, emoji, disclaimer.
         """
-        message_lower = user_message.lower()
+        message_lower = user_message.lower().strip()
 
         # Check from most severe to least severe
         for symptom in self.EMERGENCY_SYMPTOMS:
