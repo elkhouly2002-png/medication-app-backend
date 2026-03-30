@@ -128,7 +128,7 @@ class TriageEngine:
         # Medication related
         'missed several doses', 'not sure about medication', 'need refill',
         'need a refill', 'prescription refill', 'need a prescription refill',
-        'prescription expired', 'side effects',
+        'prescription expired',
         # Digestive
         'stomach ache', 'constipation', 'bloating',
         # Other
@@ -142,9 +142,12 @@ class TriageEngine:
         'stuffy nose', 'sneezing', 'mild cough', 'sore throat mild',
         # Minor pain
         'minor headache', 'headache', 'light headache', 'mild fever', 'low fever',
-        'slight fever', 'minor pain', 'muscle ache', 'body ache',
+        'slight fever', 'i have a fever', 'fever', 'minor pain', 'muscle ache', 'body ache',
         # Tiredness
         'a bit tired', 'slightly tired', 'mild fatigue',
+        # Dizziness
+        'a bit dizzy', 'feel a bit dizzy', 'i feel a bit dizzy', 'slightly dizzy',
+        'feeling dizzy', 'a little dizzy',
         # Digestive
         'mild nausea', 'i have mild nausea', 'nausea', 'i have nausea',
         'nauseous', 'i feel nauseous', 'slightly nauseous', 'upset stomach',
