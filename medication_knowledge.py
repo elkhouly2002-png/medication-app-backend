@@ -12,10 +12,43 @@ Contains specific information about common medications including:
 class MedicationKnowledge:
 
     MEDICATIONS = {
-        # ─── Paracetamol / Panadol ───
+        # ─── Panadol (separate entry for specific response) ───
+        'panadol': {
+            'aliases': ['panadol extra', 'panadoll'],
+            'side_effects': (
+                "Common side effects of Panadol (Paracetamol) are rare when taken correctly but may include:\n"
+                "• Nausea or stomach upset (uncommon)\n"
+                "• Skin rash or allergic reaction (rare)\n\n"
+                "⚠️ Serious: Liver damage can occur if you take too much. Never exceed the recommended dose. "
+                "If you notice yellowing of skin or eyes, dark urine, or severe stomach pain, call 123 immediately."
+            ),
+            'how_to_take': (
+                "How to take Panadol:\n"
+                "• Standard adult dose: 1–2 tablets (500mg–1000mg) every 4–6 hours as needed\n"
+                "• Maximum daily dose: 8 tablets (4000mg) per day — do not exceed this\n"
+                "• Can be taken with or without food\n"
+                "• Swallow tablets whole with a full glass of water\n"
+                "• Space doses at least 4 hours apart\n"
+                "• Do not take with other medications containing paracetamol"
+            ),
+            'food_interactions': (
+                "Panadol and food:\n"
+                "• Can be taken with or without food — food does not affect its effectiveness\n"
+                "• ⚠️ Avoid alcohol — combining Panadol with alcohol increases risk of liver damage\n"
+                "• No significant interactions with common foods or drinks"
+            ),
+            'missed_dose': (
+                "If you missed a dose of Panadol:\n"
+                "• Take it as soon as you remember\n"
+                "• If it's almost time for your next dose, skip the missed one\n"
+                "• Never take a double dose\n"
+                "• Panadol is usually taken as needed, so missing a dose is generally not critical"
+            )
+        },
+
+        # ─── Paracetamol / Acetaminophen ───
         'paracetamol': {
-            'aliases': ['panadol', 'acetaminophen', 'tylenol', 'panadol extra',
-                        'paracetamol', 'paracetamole', 'paracetamol', 'panadoll', 'panadol'],
+            'aliases': ['acetaminophen', 'tylenol', 'paracetamole', 'paracetamol'],
             'side_effects': (
                 "Common side effects of Paracetamol are rare when taken correctly but may include:\n"
                 "• Nausea or stomach upset (uncommon)\n"
