@@ -14,7 +14,8 @@ class MedicationKnowledge:
     MEDICATIONS = {
         # ─── Paracetamol / Panadol ───
         'paracetamol': {
-            'aliases': ['panadol', 'acetaminophen', 'tylenol', 'panadol extra'],
+            'aliases': ['panadol', 'acetaminophen', 'tylenol', 'panadol extra',
+                        'paracetamol', 'paracetamole', 'paracetamol', 'panadoll', 'panadol'],
             'side_effects': (
                 "Common side effects of Paracetamol are rare when taken correctly but may include:\n"
                 "• Nausea or stomach upset (uncommon)\n"
@@ -48,7 +49,8 @@ class MedicationKnowledge:
 
         # ─── Ibuprofen / Advil / Brufen ───
         'ibuprofen': {
-            'aliases': ['advil', 'brufen', 'nurofen', 'motrin'],
+            'aliases': ['advil', 'brufen', 'nurofen', 'motrin',
+                        'ibuprofin', 'ibuprofen', 'ibuprofn', 'ibuprofen'],
             'side_effects': (
                 "Common side effects of Ibuprofen:\n"
                 "• Stomach upset, nausea, or indigestion\n"
@@ -86,7 +88,8 @@ class MedicationKnowledge:
 
         # ─── Amoxicillin ───
         'amoxicillin': {
-            'aliases': ['amoxil', 'trimox'],
+            'aliases': ['amoxil', 'trimox', 'amoxicilin', 'amoxicillin',
+                        'amoxiciline', 'amoxicillin', 'amoxiciln'],
             'side_effects': (
                 "Common side effects of Amoxicillin:\n"
                 "• Nausea, vomiting, or diarrhea\n"
@@ -124,7 +127,7 @@ class MedicationKnowledge:
 
         # ─── Metformin ───
         'metformin': {
-            'aliases': ['glucophage', 'fortamet'],
+            'aliases': ['glucophage', 'fortamet', 'metformine', 'metfornin', 'metformin'],
             'side_effects': (
                 "Common side effects of Metformin:\n"
                 "• Nausea, vomiting, or diarrhea (especially when starting)\n"
@@ -162,7 +165,7 @@ class MedicationKnowledge:
 
         # ─── Aspirin ───
         'aspirin': {
-            'aliases': ['acetylsalicylic acid', 'disprin'],
+            'aliases': ['acetylsalicylic acid', 'disprin', 'asprin', 'asperin', 'aspiren'],
             'side_effects': (
                 "Common side effects of Aspirin:\n"
                 "• Stomach upset, nausea, or heartburn\n"
@@ -311,7 +314,7 @@ class MedicationKnowledge:
 
         # ─── Warfarin ───
         'warfarin': {
-            'aliases': ['coumadin', 'jantoven'],
+            'aliases': ['coumadin', 'jantoven', 'wafarin', 'warferin', 'warfrin'],
             'side_effects': (
                 "Common side effects of Warfarin:\n"
                 "• Easy bruising\n"

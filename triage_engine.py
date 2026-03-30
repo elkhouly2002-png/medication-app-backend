@@ -102,7 +102,9 @@ class TriageEngine:
         'pus', 'abscess',
         # Medication reaction
         'bad reaction', 'reaction to medication', 'medicine reaction',
-        'side effects bad', 'severe side effects', 'new rash after medication', 'hives',
+        'side effects bad', 'severe side effects', 'bad side effects',
+        'i have bad side effects', 'i have severe side effects',
+        'new rash after medication', 'hives',
         # Digestive
         'vomiting repeatedly', "can't keep anything down", 'severe vomiting',
         'severe nausea', 'i have severe nausea',
