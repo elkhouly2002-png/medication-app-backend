@@ -1,11 +1,12 @@
 # chatbot_engine.py
 # This class handles conversation flow and user intent detection using ML
 # Includes conversation state management for multi-turn dialogues
-# Updated: Added symptom_report and emergency_symptom intent handling
+# Updated: Added symptom_report, emergency_symptom, and treatment info intent handling
 
 from datetime import datetime, timedelta
 import pickle
 import re
+from medication_knowledge import MedicationKnowledge
 
 
 class ChatbotEngine:
@@ -24,6 +25,7 @@ class ChatbotEngine:
         """
         self.context_manager = context_manager
         self.current_intent = None
+        self.med_knowledge = MedicationKnowledge()  # NEW
 
         # Conversation state tracking (STEP 1)
         self.conversation_state = None  # Current state (e.g., "waiting_for_med_name")
@@ -996,49 +998,56 @@ class ChatbotEngine:
 
     def _response_side_effects(self, user_message=None):
         """Generate response for side effects questions"""
-        med_name = None
         if user_message:
-            med_name = self._extract_medication_name(user_message.lower())
+            specific = self.med_knowledge.get_side_effects(user_message.lower())
+            if specific:
+                return specific
 
+        med_name = self._extract_medication_name(user_message.lower()) if user_message else None
         if med_name:
             return (
-                f"Common side effects vary by medication. For {med_name}, common side effects may include "
-                f"nausea, dizziness, headache, or stomach upset. "
-                f"If you experience severe side effects like difficulty breathing, chest pain, or severe allergic reaction, "
-                f"call 123 immediately or go to the nearest ER. "
-                f"Always consult your doctor or pharmacist for specific side effect information about {med_name}."
+                f"I don't have specific side effect information for {med_name} in my database. "
+                f"Common side effects of most medications may include nausea, dizziness, headache, or stomach upset. "
+                f"Please consult your doctor or pharmacist for specific information about {med_name}. "
+                f"If you experience serious side effects like difficulty breathing or chest pain, call 123 immediately."
             )
         return (
             "Common side effects of most medications may include nausea, dizziness, headache, or stomach upset. "
             "Serious side effects like difficulty breathing, severe rash, or chest pain require immediate medical attention — call 123. "
-            "Always consult your doctor or pharmacist for specific information about your medication's side effects."
+            "Please tell me which medication you're asking about for more specific information."
         )
 
     def _response_missed_dose(self, user_message=None):
         """Generate response for missed dose questions"""
+        if user_message:
+            specific = self.med_knowledge.get_missed_dose(user_message.lower())
+            if specific:
+                return specific
+
         return (
             "If you missed a dose:\n\n"
             "• Take it as soon as you remember — unless it's almost time for your next dose.\n"
             "• If it's almost time for your next dose, skip the missed one and continue your normal schedule.\n"
             "• Never double up doses to make up for a missed one.\n"
             "• If you're unsure, contact your doctor or pharmacist.\n\n"
-            "⚠️ For critical medications like blood thinners or insulin, contact your doctor immediately if you miss a dose."
+            "⚠️ For critical medications like blood thinners or insulin, contact your doctor immediately if you miss a dose.\n\n"
+            "Tell me which medication you missed for more specific advice."
         )
 
     def _response_interactions(self, user_message=None):
         """Generate response for food/drug interactions questions"""
-        med_name = None
         if user_message:
-            med_name = self._extract_medication_name(user_message.lower())
+            specific = self.med_knowledge.get_food_interactions(user_message.lower())
+            if specific:
+                return specific
 
+        med_name = self._extract_medication_name(user_message.lower()) if user_message else None
         if med_name:
             return (
-                f"Regarding {med_name} and food interactions:\n\n"
-                f"• Some medications should be taken with food to reduce stomach upset.\n"
-                f"• Others should be taken on an empty stomach for better absorption.\n"
-                f"• Avoid alcohol with most medications as it can increase side effects.\n"
-                f"• Grapefruit juice can interact with certain medications.\n\n"
-                f"Please check the instructions on your {med_name} packaging or ask your pharmacist for specific guidance."
+                f"I don't have specific food interaction information for {med_name} in my database. "
+                f"General advice: some medications should be taken with food, others on an empty stomach. "
+                f"Avoid alcohol with most medications. "
+                f"Please check your medication leaflet or ask your pharmacist for specific guidance on {med_name}."
             )
         return (
             "Regarding food and medication interactions:\n\n"
@@ -1046,24 +1055,23 @@ class ChatbotEngine:
             "• Others should be taken on an empty stomach for better absorption.\n"
             "• Avoid alcohol with most medications as it can increase side effects.\n"
             "• Grapefruit juice can interact with certain medications.\n\n"
-            "Always check your medication label or ask your pharmacist for specific guidance."
+            "Tell me which medication you're asking about for more specific information."
         )
 
     def _response_how_to_take(self, user_message=None):
         """Generate response for how to take medication questions"""
-        med_name = None
         if user_message:
-            med_name = self._extract_medication_name(user_message.lower())
+            specific = self.med_knowledge.get_how_to_take(user_message.lower())
+            if specific:
+                return specific
 
+        med_name = self._extract_medication_name(user_message.lower()) if user_message else None
         if med_name:
             return (
-                f"General guidance for taking {med_name}:\n\n"
-                f"• Follow the dosage exactly as prescribed by your doctor.\n"
-                f"• Take it at the same time each day to maintain consistent levels.\n"
-                f"• Swallow tablets whole with a full glass of water unless instructed otherwise.\n"
-                f"• Check if it should be taken with or without food.\n"
-                f"• Do not stop taking {med_name} without consulting your doctor first.\n\n"
-                f"For specific instructions about {med_name}, always refer to the medication leaflet or ask your pharmacist."
+                f"I don't have specific instructions for {med_name} in my database. "
+                f"General advice: follow the dosage exactly as prescribed, take at the same time each day, "
+                f"and swallow tablets whole with a full glass of water. "
+                f"Please refer to your medication leaflet or ask your pharmacist for specific instructions on {med_name}."
             )
         return (
             "General guidance for taking medication:\n\n"
@@ -1071,7 +1079,7 @@ class ChatbotEngine:
             "• Take it at the same time each day to maintain consistent levels.\n"
             "• Swallow tablets whole with a full glass of water unless instructed otherwise.\n"
             "• Do not stop taking medication without consulting your doctor first.\n\n"
-            "Always refer to your medication leaflet or ask your pharmacist for specific instructions."
+            "Tell me which medication you're asking about for more specific instructions."
         )
 
     def _response_general(self):
