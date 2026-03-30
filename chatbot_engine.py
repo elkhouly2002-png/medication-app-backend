@@ -559,11 +559,20 @@ class ChatbotEngine:
             return self._response_next_dose(context_info)
         elif intent == 'set_reminder_preference':
             return self._response_set_reminder(user_message)
-        # NEW: Triage intents (fallback if triage_engine didn't catch it first)
+        # Triage intents (fallback if triage_engine didn't catch it first)
         elif intent == 'symptom_report':
             return "I've noted your symptoms. Please describe them in more detail so I can help guide you."
         elif intent == 'emergency_symptom':
             return "🚨 This sounds serious. Please call emergency services (123) or go to the nearest ER immediately. Do not wait."
+        # NEW: Treatment information intents
+        elif intent == 'ask_side_effects':
+            return self._response_side_effects(user_message)
+        elif intent == 'ask_missed_dose':
+            return self._response_missed_dose(user_message)
+        elif intent == 'ask_interactions':
+            return self._response_interactions(user_message)
+        elif intent == 'ask_how_to_take':
+            return self._response_how_to_take(user_message)
         else:
             return self._response_general()
 
@@ -984,6 +993,86 @@ class ChatbotEngine:
 
         self.set_conversation_state("waiting_for_reminder_time", "set_reminder_preference")
         return "What time would you like to set your reminders for?"
+
+    def _response_side_effects(self, user_message=None):
+        """Generate response for side effects questions"""
+        med_name = None
+        if user_message:
+            med_name = self._extract_medication_name(user_message.lower())
+
+        if med_name:
+            return (
+                f"Common side effects vary by medication. For {med_name}, common side effects may include "
+                f"nausea, dizziness, headache, or stomach upset. "
+                f"If you experience severe side effects like difficulty breathing, chest pain, or severe allergic reaction, "
+                f"call 123 immediately or go to the nearest ER. "
+                f"Always consult your doctor or pharmacist for specific side effect information about {med_name}."
+            )
+        return (
+            "Common side effects of most medications may include nausea, dizziness, headache, or stomach upset. "
+            "Serious side effects like difficulty breathing, severe rash, or chest pain require immediate medical attention — call 123. "
+            "Always consult your doctor or pharmacist for specific information about your medication's side effects."
+        )
+
+    def _response_missed_dose(self, user_message=None):
+        """Generate response for missed dose questions"""
+        return (
+            "If you missed a dose:\n\n"
+            "• Take it as soon as you remember — unless it's almost time for your next dose.\n"
+            "• If it's almost time for your next dose, skip the missed one and continue your normal schedule.\n"
+            "• Never double up doses to make up for a missed one.\n"
+            "• If you're unsure, contact your doctor or pharmacist.\n\n"
+            "⚠️ For critical medications like blood thinners or insulin, contact your doctor immediately if you miss a dose."
+        )
+
+    def _response_interactions(self, user_message=None):
+        """Generate response for food/drug interactions questions"""
+        med_name = None
+        if user_message:
+            med_name = self._extract_medication_name(user_message.lower())
+
+        if med_name:
+            return (
+                f"Regarding {med_name} and food interactions:\n\n"
+                f"• Some medications should be taken with food to reduce stomach upset.\n"
+                f"• Others should be taken on an empty stomach for better absorption.\n"
+                f"• Avoid alcohol with most medications as it can increase side effects.\n"
+                f"• Grapefruit juice can interact with certain medications.\n\n"
+                f"Please check the instructions on your {med_name} packaging or ask your pharmacist for specific guidance."
+            )
+        return (
+            "Regarding food and medication interactions:\n\n"
+            "• Some medications should be taken with food to reduce stomach upset.\n"
+            "• Others should be taken on an empty stomach for better absorption.\n"
+            "• Avoid alcohol with most medications as it can increase side effects.\n"
+            "• Grapefruit juice can interact with certain medications.\n\n"
+            "Always check your medication label or ask your pharmacist for specific guidance."
+        )
+
+    def _response_how_to_take(self, user_message=None):
+        """Generate response for how to take medication questions"""
+        med_name = None
+        if user_message:
+            med_name = self._extract_medication_name(user_message.lower())
+
+        if med_name:
+            return (
+                f"General guidance for taking {med_name}:\n\n"
+                f"• Follow the dosage exactly as prescribed by your doctor.\n"
+                f"• Take it at the same time each day to maintain consistent levels.\n"
+                f"• Swallow tablets whole with a full glass of water unless instructed otherwise.\n"
+                f"• Check if it should be taken with or without food.\n"
+                f"• Do not stop taking {med_name} without consulting your doctor first.\n\n"
+                f"For specific instructions about {med_name}, always refer to the medication leaflet or ask your pharmacist."
+            )
+        return (
+            "General guidance for taking medication:\n\n"
+            "• Follow the dosage exactly as prescribed by your doctor.\n"
+            "• Take it at the same time each day to maintain consistent levels.\n"
+            "• Swallow tablets whole with a full glass of water unless instructed otherwise.\n"
+            "• Do not stop taking medication without consulting your doctor first.\n\n"
+            "Always refer to your medication leaflet or ask your pharmacist for specific instructions."
+        )
 
     def _response_general(self):
         """Generate response for general conversation"""
