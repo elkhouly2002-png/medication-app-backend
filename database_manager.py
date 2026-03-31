@@ -14,7 +14,7 @@ from dose_log import DoseLog
 
 
 class DatabaseManager:
-    def __init__(self, db_path='medication_chatbot.db'):
+    def __init__(self, db_path='/tmp/medication_chatbot.db'):
         """Initialize database connection and create tables"""
         self.db_path = db_path
         self.conn = sqlite3.connect(db_path, check_same_thread=False)
@@ -95,6 +95,14 @@ class DatabaseManager:
         ''')
 
         self.conn.commit()
+
+        # Migration: add password column if it doesn't exist
+        try:
+            cursor.execute('ALTER TABLE users ADD COLUMN password TEXT DEFAULT ""')
+            self.conn.commit()
+            print("✅ Migration: added password column")
+        except Exception:
+            pass  # Column already exists, ignore
 
     # ============ AUTH METHODS ============
 
