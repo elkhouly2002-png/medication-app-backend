@@ -525,11 +525,26 @@ class ChatbotSession:
 @app.route('/api/user/register', methods=['POST'])
 def register_user():
     data = request.json
-    user_name = data.get('name')
+    user_name = data.get('name') or data.get('user_name')
+    password = data.get('password', '')
 
     if not user_name:
-        return jsonify({'error': 'Name is required'}), 400
+        return jsonify({'error': 'Username is required'}), 400
 
+    # If password provided, use new auth system
+    if password:
+        result = db.register_user(user_name, password)
+        if not result['success']:
+            return jsonify({'success': False, 'error': result['error']}), 400
+
+        if user_name not in user_sessions:
+            user_sessions[user_name] = ChatbotSession(user_name)
+
+        session = user_sessions[user_name]
+        session.reload_data()
+        return jsonify({'success': True, 'user_name': user_name, 'medication_count': 0})
+
+    # Legacy: no password (backward compatibility)
     if user_name not in user_sessions:
         user_sessions[user_name] = ChatbotSession(user_name)
 
@@ -538,6 +553,39 @@ def register_user():
     medications = session.medications
 
     return jsonify({'success': True, 'user_name': user_name, 'medication_count': len(medications)})
+
+
+@app.route('/api/user/login', methods=['POST'])
+def login_user():
+    """Login with username and password"""
+    try:
+        data = request.json
+        user_name = data.get('user_name') or data.get('name')
+        password = data.get('password', '')
+
+        if not user_name or not password:
+            return jsonify({'success': False, 'error': 'Username and password are required'}), 400
+
+        result = db.login_user(user_name, password)
+
+        if not result['success']:
+            return jsonify({'success': False, 'error': result['error']}), 401
+
+        if user_name not in user_sessions:
+            user_sessions[user_name] = ChatbotSession(user_name)
+
+        session = user_sessions[user_name]
+        session.reload_data()
+
+        return jsonify({
+            'success': True,
+            'user_name': user_name,
+            'medication_count': len(session.medications)
+        })
+
+    except Exception as e:
+        print(f"❌ Login error: {e}")
+        return jsonify({'success': False, 'error': str(e)}), 500
 
 
 @app.route('/api/chat', methods=['POST'])

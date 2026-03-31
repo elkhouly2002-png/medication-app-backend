@@ -1,33 +1,39 @@
 """
 Database Manager for Medication Reminder Chatbot
 Handles persistent storage of medications, dose logs, user profiles, and adherence patterns
-UPDATED: Added user profile fields (allergies, timezone, age_group)
+UPDATED: Added user profile fields (allergies, timezone, age_group) and password authentication
 """
 
 import sqlite3
 from datetime import datetime, date, time
 import json
+import hashlib
 from typing import List, Dict, Optional
 from medication import Medication
 from dose_log import DoseLog
 
 
 class DatabaseManager:
-    def __init__(self, db_path='medication_chatbot.db'):
+    def __init__(self, db_path='/tmp/medication_chatbot.db'):
         """Initialize database connection and create tables"""
         self.db_path = db_path
         self.conn = sqlite3.connect(db_path, check_same_thread=False)
         self.conn.row_factory = sqlite3.Row  # Enable column access by name
         self.create_tables()
 
+    def _hash_password(self, password: str) -> str:
+        """Hash password using SHA-256"""
+        return hashlib.sha256(password.encode()).hexdigest()
+
     def create_tables(self):
         """Create database tables if they don't exist"""
         cursor = self.conn.cursor()
 
-        # Users table (NEW - for user profiles)
+        # Users table with password
         cursor.execute('''
             CREATE TABLE IF NOT EXISTS users (
                 user_name TEXT PRIMARY KEY,
+                password TEXT DEFAULT '',
                 timezone TEXT DEFAULT 'UTC',
                 age_group TEXT DEFAULT 'adult',
                 allergies TEXT DEFAULT '',
@@ -89,6 +95,62 @@ class DatabaseManager:
         ''')
 
         self.conn.commit()
+
+    # ============ AUTH METHODS ============
+
+    def register_user(self, user_name: str, password: str) -> dict:
+        """Register a new user with username and password"""
+        cursor = self.conn.cursor()
+
+        # Check if username already exists
+        cursor.execute('SELECT user_name FROM users WHERE user_name = ?', (user_name,))
+        if cursor.fetchone():
+            return {'success': False, 'error': 'Username already exists'}
+
+        # Validate username
+        if len(user_name) < 3:
+            return {'success': False, 'error': 'Username must be at least 3 characters'}
+        if not user_name.replace('_', '').isalnum():
+            return {'success': False, 'error': 'Username can only contain letters, numbers, and underscores'}
+
+        # Validate password
+        if len(password) < 6:
+            return {'success': False, 'error': 'Password must be at least 6 characters'}
+
+        try:
+            hashed = self._hash_password(password)
+            cursor.execute('''
+                INSERT INTO users (user_name, password, timezone, age_group, allergies, created_at, updated_at)
+                VALUES (?, ?, ?, ?, ?, ?, ?)
+            ''', (user_name, hashed, 'UTC', 'adult', '', datetime.now().isoformat(), datetime.now().isoformat()))
+            self.conn.commit()
+            print(f"✅ User registered: {user_name}")
+            return {'success': True}
+        except Exception as e:
+            print(f"❌ Error registering user: {e}")
+            return {'success': False, 'error': str(e)}
+
+    def login_user(self, user_name: str, password: str) -> dict:
+        """Login user with username and password"""
+        cursor = self.conn.cursor()
+
+        cursor.execute('SELECT user_name, password FROM users WHERE user_name = ?', (user_name,))
+        row = cursor.fetchone()
+
+        if not row:
+            return {'success': False, 'error': 'Username not found'}
+
+        hashed = self._hash_password(password)
+        if row['password'] != hashed:
+            return {'success': False, 'error': 'Incorrect password'}
+
+        return {'success': True, 'user_name': user_name}
+
+    def user_exists(self, user_name: str) -> bool:
+        """Check if a username already exists"""
+        cursor = self.conn.cursor()
+        cursor.execute('SELECT user_name FROM users WHERE user_name = ?', (user_name,))
+        return cursor.fetchone() is not None
 
     # ============ USER PROFILE METHODS ============
 
