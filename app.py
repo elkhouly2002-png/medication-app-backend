@@ -682,6 +682,7 @@ def skip_dose():
 
 
 
+@app.route('/api/medications', methods=['GET'])
 def get_medications():
     user_name = request.args.get('user_name')
     if not user_name:
