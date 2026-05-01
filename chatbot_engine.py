@@ -689,7 +689,7 @@ class ChatbotEngine:
 
     def _check_skip_request(self, message):
         """Check if user wants to skip dose"""
-        keywords = ['skip', 'not taking', "won't take", 'cancel', 'ignore']
+        keywords = ['skip', 'not taking', "won't take", 'cancel', 'ignore', 'skip dose', 'missed']
         return any(keyword in message for keyword in keywords)
 
     def _check_history_query(self, message):
