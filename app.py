@@ -632,7 +632,56 @@ def triage():
         return jsonify({'success': False, 'error': str(e)}), 500
 
 
-@app.route('/api/medications', methods=['GET'])
+@app.route('/api/dose/skip', methods=['POST'])
+def skip_dose():
+    """Directly skip/miss a dose without going through chat"""
+    try:
+        data = request.json
+        user_name = data.get('user_name')
+        med_name = data.get('med_name')
+
+        if not user_name or not med_name:
+            return jsonify({'success': False, 'error': 'Missing required fields'}), 400
+
+        if user_name not in user_sessions:
+            user_sessions[user_name] = ChatbotSession(user_name)
+
+        session = user_sessions[user_name]
+        session.reload_data()
+
+        # Find medication by name
+        target_med_id = None
+        for med_id, med in session.medications.items():
+            if med.name.lower() == med_name.lower():
+                target_med_id = med_id
+                break
+
+        if not target_med_id:
+            return jsonify({'success': False, 'error': 'Medication not found'}), 404
+
+        # Log as skipped
+        from datetime import datetime
+        import uuid as uuid_module
+        now = datetime.now()
+        log_id = str(uuid_module.uuid4())[:8]
+        dose_log = DoseLog(
+            log_id=log_id,
+            med_id=target_med_id,
+            scheduled_time=now,
+            status="skipped",
+            actual_time=now
+        )
+        db.save_dose_log(user_name, dose_log)
+        session.reload_data()
+
+        return jsonify({'success': True, 'message': f'{med_name} marked as skipped'})
+
+    except Exception as e:
+        print(f"❌ Error skipping dose: {e}")
+        return jsonify({'success': False, 'error': str(e)}), 500
+
+
+
 def get_medications():
     user_name = request.args.get('user_name')
     if not user_name:
