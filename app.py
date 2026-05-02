@@ -104,6 +104,67 @@ class ChatbotSession:
             return next_doses[0]
         return None
 
+    def handle_dose_skip(self, user_message):
+        """Handle skipping a dose - same logic as confirm but logs as skipped"""
+        if not self.medications:
+            return
+
+        target_med_id = None
+        target_medication = None
+        message_lower = user_message.lower()
+
+        sorted_meds = sorted(self.medications.items(), key=lambda x: len(x[1].name), reverse=True)
+
+        for med_id, med in sorted_meds:
+            if med.name.lower() in message_lower:
+                target_med_id = med_id
+                target_medication = med
+                break
+
+        if not target_medication:
+            current_time = datetime.now().time()
+            closest_diff = float('inf')
+            for med_id, med in self.medications.items():
+                for scheduled_time in med.scheduled_times:
+                    diff = abs((datetime.combine(datetime.today(), scheduled_time) -
+                                datetime.combine(datetime.today(), current_time)).total_seconds())
+                    if diff < closest_diff:
+                        closest_diff = diff
+                        target_med_id = med_id
+                        target_medication = med
+
+        if not target_medication:
+            self.no_dose_to_skip = True
+            return
+
+        actual_time = datetime.now()
+        current_time = actual_time.time()
+
+        closest_scheduled = min(
+            target_medication.scheduled_times,
+            key=lambda t: abs((datetime.combine(datetime.today(), t) -
+                               datetime.combine(datetime.today(), current_time)).total_seconds())
+        )
+
+        scheduled_datetime = actual_time.replace(
+            hour=closest_scheduled.hour,
+            minute=closest_scheduled.minute,
+            second=0,
+            microsecond=0
+        )
+
+        log_id = str(uuid.uuid4())[:8]
+        dose_log = DoseLog(
+            log_id=log_id,
+            med_id=target_med_id,
+            scheduled_time=scheduled_datetime,
+            status="skipped",
+            actual_time=actual_time
+        )
+
+        self.dose_logs.append(dose_log)
+        self.db.save_dose_log(self.user_name, dose_log)
+
     def handle_dose_confirmation(self, user_message):
         """EXACT copy from main.py - handles dose confirmation with proper medication detection"""
         if not self.medications:
@@ -385,6 +446,9 @@ class ChatbotSession:
         if intent == 'confirm_dose':
             self.handle_dose_confirmation(user_message)
 
+        elif intent == 'skip_dose':
+            self.handle_dose_skip(user_message)
+
         elif intent == 'add_medication':
             med_name = entities.get('med_name')
             dosage = entities.get('dosage')
@@ -659,15 +723,40 @@ def skip_dose():
         if not target_med_id:
             return jsonify({'success': False, 'error': 'Medication not found'}), 404
 
-        # Log as skipped
+        # Find the closest scheduled time for today
         from datetime import datetime
         import uuid as uuid_module
         now = datetime.now()
+        current_time = now.time()
+
+        # Find closest scheduled time
+        closest_scheduled_time = None
+        closest_diff = float('inf')
+        for med in session.medications.values():
+            if med.med_id == target_med_id or med.name.lower() == med_name.lower():
+                for sched_time in med.scheduled_times:
+                    from datetime import datetime as dt2, timedelta
+                    sched_dt = dt2.combine(now.date(), sched_time)
+                    diff = abs((now - sched_dt).total_seconds())
+                    if diff < closest_diff:
+                        closest_diff = diff
+                        closest_scheduled_time = sched_time
+
+        if not closest_scheduled_time:
+            closest_scheduled_time = now.time()
+
+        scheduled_datetime = now.replace(
+            hour=closest_scheduled_time.hour,
+            minute=closest_scheduled_time.minute,
+            second=0,
+            microsecond=0
+        )
+
         log_id = str(uuid_module.uuid4())[:8]
         dose_log = DoseLog(
             log_id=log_id,
             med_id=target_med_id,
-            scheduled_time=now,
+            scheduled_time=scheduled_datetime,
             status="skipped",
             actual_time=now
         )
