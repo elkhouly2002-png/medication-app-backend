@@ -796,6 +796,30 @@ def get_medications():
     return jsonify({'success': True, 'medications': meds_list})
 
 
+@app.route('/api/medication/delete', methods=['POST'])
+def delete_medication():
+    """Delete a medication directly by med_id"""
+    try:
+        data = request.json
+        user_name = data.get('user_name')
+        med_id = data.get('med_id')
+
+        if not all([user_name, med_id]):
+            return jsonify({'success': False, 'error': 'Missing required fields'}), 400
+
+        db.delete_medication(med_id)
+
+        # Update session if exists
+        session = user_sessions.get(user_name)
+        if session:
+            session.medications.pop(med_id, None)
+            session.reload_data()
+
+        return jsonify({'success': True, 'message': f'Medication deleted'})
+    except Exception as e:
+        return jsonify({'success': False, 'error': str(e)}), 500
+
+
 @app.route('/api/medication/toggle', methods=['POST'])
 def toggle_medication():
     """Toggle medication active/paused status"""
